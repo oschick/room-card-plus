@@ -17,7 +17,6 @@ room-card-plus:
     My favourite feature: replacing the default state with “Entity States” — you can pick one or multiple entities and control what shows (text, icon, or both), plus per-entity color, animation, ordering, and conditions.
 
       Support: https://buymeacoffee.com/luciotorelli
-
   code: |
     code: |2-
           .large .bubble-button-card-container {
@@ -141,8 +140,10 @@ room-card-plus:
             max-height: 95%;
             padding-right: 10px;
             transform: translateX(0);
-            z-index: 99 !important;
+            z-index: auto !important;
           }
+
+          .bubble-sub-button-container:focus-within { z-index: 99 !important; }
 
           .bubble-sub-button-container.room-card-plus-two-cols {
             transform: translateX(calc(-1 * var(--slim-sb-left-shift)));
@@ -547,7 +548,6 @@ room-card-plus:
             }
             return '';
           })()}
-
   editor:
     - type: expandable
       title: Card settings
@@ -561,7 +561,6 @@ room-card-plus:
               min: 0
               max: 40
               step: 1
-
     - type: expandable
       title: Title & State size
       icon: mdi:format-size
@@ -598,7 +597,6 @@ room-card-plus:
               min: 0
               max: 12
               step: 1
-
     - type: expandable
       title: Title & State positioning
       icon: mdi:cursor-move
@@ -635,7 +633,6 @@ room-card-plus:
               min: 10
               max: 60
               step: 1
-
     - type: expandable
       title: Main Icon positioning
       icon: mdi:cursor-move
@@ -672,7 +669,6 @@ room-card-plus:
               min: -80
               max: 40
               step: 1
-
     - type: expandable
       title: Main Icon style
       icon: mdi:palette
@@ -735,12 +731,12 @@ room-card-plus:
               step: 1
         - name: icon_color
           label: Icon color (default)
-          default: "#1c1c1c"
+          default: '#1c1c1c'
           selector:
             text: {}
         - name: main_icon_bg_color
           label: Main icon background color (hex/css/ui_color)
-          default: "#ffc47e"
+          default: '#ffc47e'
           selector:
             text: {}
         - name: main_icon_bg_off_opacity
@@ -755,7 +751,6 @@ room-card-plus:
           label: Test icon override (forces icon.icon)
           selector:
             icon: {}
-
     - type: expandable
       title: Main Icon rules
       icon: mdi:shield-star-outline
@@ -848,7 +843,6 @@ room-card-plus:
                   default: true
                   selector:
                     boolean: {}
-
     - type: expandable
       title: Main Icon background rules
       icon: mdi:palette-swatch
@@ -876,7 +870,6 @@ room-card-plus:
                   default: true
                   selector:
                     boolean: {}
-
     - type: expandable
       title: Sub-button Layout
       icon: mdi:dots-vertical
@@ -929,7 +922,6 @@ room-card-plus:
               min: 0
               max: 30
               step: 1
-
     - type: expandable
       title: State entities
       icon: mdi:information-outline
